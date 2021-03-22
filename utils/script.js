@@ -8,9 +8,15 @@ RegisterCommand('tp', async (source, args) => {
 }, false);
 
 RegisterCommand('traffic', async (source, args) => {
-    SetRandomVehicleDensityMultiplierThisFrame(0.0);
-    SetParkedVehicleDensityMultiplierThisFrame(0.0);
-    SetVehicleDensityMultiplierThisFrame(0.0);
+    switch (args[0]) {
+        case '--no':
+            context.traffic = 0.0;
+            break;
+    
+        case '--yes':
+            context.traffic = 1.0;
+            break;
+    }
 }, false);
 
 setTick(() => {
