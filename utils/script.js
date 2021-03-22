@@ -40,8 +40,10 @@ on('onClientGameTypeStart', () => {
 
     playerPed = PlayerPedId()
     SetPedFaceFeature(playerPed, 0,	1.0);
+    SetPedFaceFeature(playerPed, 3,	-1.0);
+    SetPedFaceFeature(playerPed, 9,	-1.0);
     SetPedFaceFeature(playerPed, 19, 1.0);
-    SetPedHeadOverlay(playerPed, 10, 10, 255);
+    SetPedHeadOverlay(playerPed, 10, 1, 255);
   });
   
 
