@@ -23,7 +23,7 @@ RegisterCommand('model', async (source, args) => {
     const pos = GetOffsetFromEntityInWorldCoords(GetPlayerPed(-1), 0.0, 2.0, 0.0)
     const hash = GetHashKey(args[0])
     RequestModel(hash)
-    while(!HasModelLoaded(hash)) { Citizen.Wait(0) }
+    while(!HasModelLoaded(hash)) { }
     const ped = CreatePed(28, hash, pos.x, pos.y, pos.z, 0.0, true, true)
 
     ChangePlayerPed(GetPlayerPed(-1), ped, 1, 1)
