@@ -18,7 +18,7 @@ RegisterCommand('traffic', async (source, args) => {
             break;
     }
 }, false);
-
+const spawnPos = [686.245, 577.950, 130.461];
 on('onClientGameTypeStart', () => {
     exports.spawnmanager.setAutoSpawnCallback(() => {
       exports.spawnmanager.spawnPlayer({
