@@ -19,13 +19,26 @@ RegisterCommand('traffic', async (source, args) => {
     }
 }, false);
 
-RegisterCommand('model', async (source, args) => {
-    const pos = GetOffsetFromEntityInWorldCoords(GetPlayerPed(-1), 0.0, 2.0, 0.0)
-    const hash = GetHashKey('a_c_boar');
-    const ped = CreatePed(28, hash, pos.x, pos.y, pos.z, 0.0, true, true)
-
-    ChangePlayerPed(GetPlayerPed(-1), ped, 1, 1)
-}, false)
+on('onClientGameTypeStart', () => {
+    exports.spawnmanager.setAutoSpawnCallback(() => {
+      exports.spawnmanager.spawnPlayer({
+        x: spawnPos[0],
+        y: spawnPos[1],
+        z: spawnPos[2],
+        model: 'a_m_m_acult_01'
+      }, () => {
+        emit('chat:addMessage', {
+          args: [
+            'Welcome to the party!~'
+          ]
+        })
+      });
+    });
+  
+    exports.spawnmanager.setAutoSpawn(true)
+    exports.spawnmanager.forceRespawn()
+  });
+  
 
 setTick(() => {
     SetMaxWantedLevel(0);
