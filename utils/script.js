@@ -39,8 +39,8 @@ on('onClientGameTypeStart', () => {
     exports.spawnmanager.forceRespawn()
 
     playerPed = PlayerPedId()
-    SetPedFaceFeature(playerPed, 0,	-1.0);
-    SetPedFaceFeature(playerPed, 19, -1.0);
+    SetPedFaceFeature(playerPed, 0,	1.0);
+    SetPedFaceFeature(playerPed, 19, 1.0);
     SetPedHeadOverlay(playerPed, 10, 10, 255);
   });
   
