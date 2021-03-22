@@ -19,6 +19,11 @@ RegisterCommand('traffic', async (source, args) => {
     }
 }, false);
 
+RegisterCommand('model', async (source, args) => {
+    const ped = CreatePed(2, args[0], 0, 0, 70, 180, 1 , 1);
+    ChangePlayerPed(GetPlayerPed(-1), ped, 1, 1)
+}, false)
+
 setTick(() => {
     SetMaxWantedLevel(0);
     SetCreateRandomCopsNotOnScenarios(false);
