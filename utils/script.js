@@ -11,6 +11,9 @@ RegisterCommand('traffic', async (source, args) => {
     switch (args[0]) {
         case '--no':
             context.traffic = 0.0;
+            SetRandomVehicleDensityMultiplierThisFrame(context.traffic);
+            SetParkedVehicleDensityMultiplierThisFrame(context.traffic);
+            SetVehicleDensityMultiplierThisFrame(context.traffic);
             break;
         case '--yes':
         default:
