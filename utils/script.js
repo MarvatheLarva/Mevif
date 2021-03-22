@@ -8,16 +8,7 @@ RegisterCommand('tp', async (source, args) => {
 }, false);
 
 RegisterCommand('traffic', async (source, args) => {
-    switch (args[0]) {
-        case '--no':
-            context.traffic = 0.0;
-            SetRandomVehicleDensityMultiplierThisFrame(context.traffic);
-            SetParkedVehicleDensityMultiplierThisFrame(context.traffic);
-            SetVehicleDensityMultiplierThisFrame(context.traffic);
-            break;
-        case '--yes':
-        default:
-            context.traffic = 1.0;
-            break;
-    }
+    SetRandomVehicleDensityMultiplierThisFrame(0.0);
+    SetParkedVehicleDensityMultiplierThisFrame(0.0);
+    SetVehicleDensityMultiplierThisFrame(0.0);
 }, false);
