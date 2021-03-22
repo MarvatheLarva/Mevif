@@ -12,3 +12,20 @@ RegisterCommand('traffic', async (source, args) => {
     SetParkedVehicleDensityMultiplierThisFrame(0.0);
     SetVehicleDensityMultiplierThisFrame(0.0);
 }, false);
+
+setTick(() => {
+    SetMaxWantedLevel(0);
+    SetCreateRandomCopsNotOnScenarios(false);
+    SetCreateRandomCops(false);
+    SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0);
+    SetPedDensityMultiplierThisFrame(0.0);
+    SetVehicleDensityMultiplierThisFrame(0.0);
+    SetAmbientVehicleRangeMultiplierThisFrame(0.0);
+    SetRandomVehicleDensityMultiplierThisFrame(0.0);
+    SetParkedVehicleDensityMultiplierThisFrame(0.0);
+    SetVehicleDensityMultiplierThisFrame(0.0);
+    SetPedDensityMultiplierThisFrame(0.0);
+    SetRandomVehicleDensityMultiplierThisFrame(0.0);
+    SetParkedVehicleDensityMultiplierThisFrame(0.0);
+    SetScenarioPedDensityMultiplierThisFrame(0.0, 0.0);
+  });
