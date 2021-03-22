@@ -20,8 +20,11 @@ RegisterCommand('traffic', async (source, args) => {
 }, false);
 
 Citizen.CreateThread(() => {
-    // Traffic gestion
-    SetRandomVehicleDensityMultiplierThisFrame(context.traffic);
-    SetParkedVehicleDensityMultiplierThisFrame(context.traffic);
-    SetVehicleDensityMultiplierThisFrame(context.traffic);
+    while (true) {   
+        Citizen.Wait(0);
+        // Traffic gestion
+        SetRandomVehicleDensityMultiplierThisFrame(context.traffic);
+        SetParkedVehicleDensityMultiplierThisFrame(context.traffic);
+        SetVehicleDensityMultiplierThisFrame(context.traffic);
+    }
 })
